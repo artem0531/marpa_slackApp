@@ -1,12 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const SLACK_TOKEN = 'xoxb-7535431659605-7608568484948-KABrfRX7TTgYIPhA5CB7Befb'; // Replace with your Bot User OAuth Token from Slack
-const OPENAI_API_KEY = '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'; // Replace with your OpenAI API key
+const SLACK_TOKEN = process.env.SLACK_TOKEN
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY
 
 app.use(bodyParser.json());
 
